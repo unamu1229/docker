@@ -1,14 +1,16 @@
 version: "2"
 services:
   mysql:
+    container_name: mysql
     build: ./Dockerfile/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: secret2q3
     volumes:
       - db:/var/lib/mysql
     ports:
       - "3306:3306"
   centos_php:
+    container_name: centos_php
     privileged: true
     command: /sbin/init
     build: ./Dockerfile/centos_php
