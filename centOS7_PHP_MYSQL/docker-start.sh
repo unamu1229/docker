@@ -3,4 +3,4 @@
 docker-machine start
 eval $(docker-machine env)
 docker-compose start
-docker exec -it centos_php script -q -c "/bin/bash"
+docker exec -it -u="www" centos_php script -q -c "/bin/zsh" /dev/null
