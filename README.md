@@ -1,3 +1,25 @@
+# Docker 起動コマンド
+source docker-start.sh
+
+# Webサーバコンテンナ作成時
+```
+docker exec -it centos_php script -q -c "/bin/zsh" 
+```
+でコンテナに入って下記コマンドをおこない、zpreztoとｚｓｈの設定を行う必要があります。
+```
+setopt EXTENDED_GLOB; for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; done;
+cat zsh_orig/.zshrc >> .zshrc; source .zshrc
+cp -r .autojump /home/www/.autojump; chown -R www:www /home/www/.autojump \
+  && cp .zshrc /home/www/.zshrc; chown www:www /home/www/.zshrc \
+  && cp .zlogin /home/www/.zlogin; chown www:www /home/www/.zlogin \
+  && cp .zlogout /home/www/.zlogout; chown www:www /home/www/.zlogout \
+  && cp .zpreztorc /home/www/.zpreztorc; chown www:www /home/www/.zpreztorc \
+  && cp .zprofile /home/www/.zprofile; chown www:www /home/www/.zprofile \
+  && cp .zshenv /home/www/.zshenv; chown www:www /home/www/.zshenv \
+  && cp -r .zprezto /home/www/.zprezto; chown -R www:www /home/www/.zprezto
+```
+
+
 # Virtualbox の 共有フォルダのパーミッションが問題になった場合
 
 ## boot2dockerで行う ※docker start する前に行わないといけない
