@@ -18,7 +18,8 @@ cp -r .autojump /home/www/.autojump; chown -R www:www /home/www/.autojump \
   && cp .zshenv /home/www/.zshenv; chown www:www /home/www/.zshenv \
   && cp -r .zprezto /home/www/.zprezto; chown -R www:www /home/www/.zprezto
 ```
-
+# WebサーバコンテナへのSSH接続Port
+docker ps コマンドで表示されるPortを利用する。初期状態は２２０２ポート。docker machine で22番ポートが利用されているので２２は利用できない。
 
 # Virtualbox の 共有フォルダのパーミッションが問題になった場合
 
