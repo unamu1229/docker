@@ -30,6 +30,8 @@ RUN chsh -s /bin/zsh; ls -al; source /root/.zshrc; cd autojump; ./install.py;
 
 RUN cd; mkdir zsh_orig && mv .zshrc zsh_orig;
 
+RUN curl -sS https://getcomposer.org/installer | php; mv composer.phar /usr/local/bin/composer
+
 # zprezto の初期設定に成功しない。
 # RUN zsh; setopt EXTENDED_GLOB; for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md; do ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; done;
 
