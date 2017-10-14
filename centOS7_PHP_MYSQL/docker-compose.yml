@@ -16,7 +16,7 @@ services:
     build: ./Dockerfile/centos_php
     ports:
       - "80:80"
-      - "2202:22"
+      - "22:22"
     volumes:
       - ../../html/centOS7_PHP_MYSQL:/var/www/html
     depends_on:
