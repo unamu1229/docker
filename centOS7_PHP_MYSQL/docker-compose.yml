@@ -18,7 +18,7 @@ services:
       - "80:80"
       - "22:22"
     volumes:
-      - ../../html/centOS7_PHP_MYSQL:/var/www/html
+      - /Volumes/BuffaloHD/html/centOS7_PHP_MYSQL:/var/www/html
     depends_on:
       - mysql    
 volumes:
